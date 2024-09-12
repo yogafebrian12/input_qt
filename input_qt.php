@@ -34,10 +34,10 @@
 
 <div class="box box-default">
 <div class="box-header with-bordered">
-	<h3 class="box-title"></h3>
-	<div class="pull-right">
-		<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-	</div>
+  <h3 class="box-title"></h3>
+  <div class="pull-right">
+    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+  </div>
 </div>
 <div class="box-body">
 <div class="row">
@@ -2553,7 +2553,7 @@
 /*function initPhoto(){
   //var n=$('#item_fotoold').val();
   //if(n==""){
-  	$('#item_foto').fileinput({
+    $('#item_foto').fileinput({
     overwriteInitial: false,
     showUpload: false, // hide upload button
     minFileCount: 0,
@@ -2564,7 +2564,7 @@
     browseOnZoneClick: true,
     //showBrowse: false,
     initialPreviewAsData: true // identify if you are sending preview data only and not the markup
-  	});
+    });
   //}
 }*/
 
@@ -2671,18 +2671,18 @@ function readURL(input) {
 }
 
 function OnlyNum(evt) {
-	var charCode = (evt.which) ? evt.which : event.keyCode
-	if (charCode > 31 && (charCode < 48 || charCode > 57))
+  var charCode = (evt.which) ? evt.which : event.keyCode
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
  
-	return false;
-	return true;
+  return false;
+  return true;
 }
 
 function custom_bulat(nilai,pembulat,id)
 {
     var hasil = (Math.ceil(parseInt(nilai))%parseInt(pembulat) == 0) ? Math.ceil(parseInt(nilai)) : Math.round((parseInt(nilai)+parseInt(pembulat)/2)/parseInt(pembulat))*parseInt(pembulat);
-  	$(id).val(hasil);
-  	//return hasil;
+    $(id).val(hasil);
+    //return hasil;
 }
 
 // Sub total 1
@@ -2904,30 +2904,30 @@ function hitMfCBM(){
 }
 
 function hitCrtCBM(){
-	var p=parseFloat($('#pk_crtp').val());
-	var l=parseFloat($('#pk_crtl').val());
-	var t=parseFloat($('#pk_crtt').val());
-	var res=(p*l*t)/1000000;
-	$('#pk_crtcbm').val(res.toFixed(4));
+  var p=parseFloat($('#pk_crtp').val());
+  var l=parseFloat($('#pk_crtl').val());
+  var t=parseFloat($('#pk_crtt').val());
+  var res=(p*l*t)/1000000;
+  $('#pk_crtcbm').val(res.toFixed(4));
   setTrucking();
-	setContainer();
+  setContainer();
 }
 
 function hitTotalCBM(){
-	var hit=0;
-	var res=0;
-	$('.item-dim-cbm').each(function(){
-		var v=$(this).val();
-		if(v!=''){
-			if(v!=0){
-				hit+=parseFloat(v);
-				res=parseFloat(hit);
-			}
-		}
-	});
-	console.log('Total CBM: '+res);
-	$('#item_dim_totcbm').val(res.toFixed(4));
-	//$('#item_totcbm').val(res.toFixed(4));
+  var hit=0;
+  var res=0;
+  $('.item-dim-cbm').each(function(){
+    var v=$(this).val();
+    if(v!=''){
+      if(v!=0){
+        hit+=parseFloat(v);
+        res=parseFloat(hit);
+      }
+    }
+  });
+  console.log('Total CBM: '+res);
+  $('#item_dim_totcbm').val(res.toFixed(4));
+  //$('#item_totcbm').val(res.toFixed(4));
 
   if($('#cb_jasaoven').is(':checked')){
     hitJasaoven();
@@ -2936,11 +2936,11 @@ function hitTotalCBM(){
   updMf();
   updCtnbox();
   //updCrt();
-	setTrucking();
+  setTrucking();
   //setStyrofoam();
   setSize();
-	subTotal2();
-	setContainer();
+  subTotal2();
+  setContainer();
 }
 
 /* HITUNG CBM */
@@ -4049,10 +4049,10 @@ function setTrucking(){
 }
 
 function setContainer(){
-	var ctnboxcbm=parseFloat($('#pk_ctnboxcbm').val());
-	var crtcbm=parseFloat($('#pk_crtcbm').val());
+  var ctnboxcbm=parseFloat($('#pk_ctnboxcbm').val());
+  var crtcbm=parseFloat($('#pk_crtcbm').val());
   //var totcbm=parseFloat($('#item_dim_totcbm').val());
-	var totcbm=parseFloat($('#pk_mfcbm').val());
+  var totcbm=parseFloat($('#pk_mfcbm').val());
   var floatingctnboxcbm=parseFloat($('#pk_floatingctnboxcbm').val());
   var cbm=0;
 
@@ -4070,14 +4070,14 @@ function setContainer(){
   //   }
   // }
 
-	/*if(ctnboxcbm!=0 || ctnboxcbm!=0.0000){
-		cbm=ctnboxcbm;
-	}else{
-		cbm=crtcbm;
-	}*/
+  /*if(ctnboxcbm!=0 || ctnboxcbm!=0.0000){
+    cbm=ctnboxcbm;
+  }else{
+    cbm=crtcbm;
+  }*/
 
-	$('#pk_containercostcbm').val(cbm.toFixed(4));
-	hitContainer();
+  $('#pk_containercostcbm').val(cbm.toFixed(4));
+  hitContainer();
 }
 
 /* HITUNG HARGA */
@@ -4209,40 +4209,40 @@ function hitHargaFloatingCtnbox(){
 }
 
 function hitHargaCrt(){
-	var cbm=parseFloat($('#pk_crtcbm1').val());
-	var price=parseFloat($('#pk_crtprice').val().replace('.',''));
-	var res=cbm*price;
-	$('#pk_crttotal').val(Math.round(res));
-	subTotal2();
-	setContainer();
+  var cbm=parseFloat($('#pk_crtcbm1').val());
+  var price=parseFloat($('#pk_crtprice').val().replace('.',''));
+  var res=cbm*price;
+  $('#pk_crttotal').val(Math.round(res));
+  subTotal2();
+  setContainer();
 }
 
 function hitTrucking(){
-	var price=parseFloat($('#pk_truckingcostprice').val().replace('.',''));
-	var kap=parseFloat($('#pk_truckingcostkap').val());
-	var cbm=parseFloat($('#pk_truckingcostcbm').val());
+  var price=parseFloat($('#pk_truckingcostprice').val().replace('.',''));
+  var kap=parseFloat($('#pk_truckingcostkap').val());
+  var cbm=parseFloat($('#pk_truckingcostcbm').val());
 
-	var res=(price/kap)*cbm;
-	$('#pk_truckingtotal').val(Math.round(res));
-	setContainer();
-	subTotal2();
+  var res=(price/kap)*cbm;
+  $('#pk_truckingtotal').val(Math.round(res));
+  setContainer();
+  subTotal2();
 }
 
 function hitContainer(){
-	var price=parseFloat($('#pk_containercostprice').val().replace('.',''));
-	var kap=parseFloat($('#pk_containercostkap').val());
-	var cbm=$('#pk_containercostcbm').val();
-	var res=(price/kap)*cbm;
-	$('#pk_containercosttotal').val(Math.round(res));
-	subTotal2();
+  var price=parseFloat($('#pk_containercostprice').val().replace('.',''));
+  var kap=parseFloat($('#pk_containercostkap').val());
+  var cbm=$('#pk_containercostcbm').val();
+  var res=(price/kap)*cbm;
+  $('#pk_containercosttotal').val(Math.round(res));
+  subTotal2();
 }
 
 function hitIspn(){
-	var ispn=parseFloat($('#pk_ispn').val());
-	var price=parseFloat($('#pk_ispnprice').val().replace('.',''));
-	var res=ispn*price;
-	$('#pk_ispntotal').val(Math.round(res));
-	subTotal2();
+  var ispn=parseFloat($('#pk_ispn').val());
+  var price=parseFloat($('#pk_ispnprice').val().replace('.',''));
+  var res=ispn*price;
+  $('#pk_ispntotal').val(Math.round(res));
+  subTotal2();
 }
 
 function hitSponati(){
@@ -4310,35 +4310,35 @@ function hitBabat250(){
 }
 
 function hitJhook(){
-	var jhook=parseFloat($('#pk_jhook').val());
-	var price=parseFloat($('#pk_jhookprice').val().replace('.',''));
-	var res=jhook*price;
-	$('#pk_jhooktotal').val(Math.round(res));
-	subTotal2();
+  var jhook=parseFloat($('#pk_jhook').val());
+  var price=parseFloat($('#pk_jhookprice').val().replace('.',''));
+  var res=jhook*price;
+  $('#pk_jhooktotal').val(Math.round(res));
+  subTotal2();
 }
 
 function hitDring(){
-	var dr=parseFloat($('#pk_dring').val());
-	var price=parseFloat($('#pk_dringprice').val().replace('.',''));
-	var res=dr*price;
-	$('#pk_dringtotal').val(Math.round(res));
-	subTotal2();
+  var dr=parseFloat($('#pk_dring').val());
+  var price=parseFloat($('#pk_dringprice').val().replace('.',''));
+  var res=dr*price;
+  $('#pk_dringtotal').val(Math.round(res));
+  subTotal2();
 }
 
 function hitRinghanger(){
-	var rh=parseFloat($('#pk_ringhanger').val());
-	var price=parseFloat($('#pk_ringhangerprice').val().replace('.',''));
-	var res=rh*price;
-	$('#pk_ringhangertotal').val(Math.round(res));
-	subTotal2();
+  var rh=parseFloat($('#pk_ringhanger').val());
+  var price=parseFloat($('#pk_ringhangerprice').val().replace('.',''));
+  var res=rh*price;
+  $('#pk_ringhangertotal').val(Math.round(res));
+  subTotal2();
 }
 
 function hitKeyhole(){
-	var kh=parseFloat($('#pk_keyhole').val());
-	var price=parseFloat($('#pk_keyholeprice').val().replace('.',''));
-	var res=kh*price;
-	$('#pk_keyholetotal').val(Math.round(res));
-	subTotal2();
+  var kh=parseFloat($('#pk_keyhole').val());
+  var price=parseFloat($('#pk_keyholeprice').val().replace('.',''));
+  var res=kh*price;
+  $('#pk_keyholetotal').val(Math.round(res));
+  subTotal2();
 }
 
 function hitSawteeth(){
@@ -4384,27 +4384,27 @@ function hitKuncil(){
 //FOB
 
 function hitFob(){
-	var s1=parseFloat($('#h_subtotal1').val().replace('.',''));
-	var s2=parseFloat($('#pk_subtotal2').val().replace('.',''));
-	var res=s1+s2;
-	$('#pk_fobtotal').val(Math.round(res));
-	hitOverhead();
+  var s1=parseFloat($('#h_subtotal1').val().replace('.',''));
+  var s2=parseFloat($('#pk_subtotal2').val().replace('.',''));
+  var res=s1+s2;
+  $('#pk_fobtotal').val(Math.round(res));
+  hitOverhead();
 }
 
 function hitOverhead(){
-	var t1=parseFloat($('#pk_fobtotal').val().replace('.',''));
-	var oh=parseFloat($('#pk_overhead').val());
-	var res=(oh/100)*t1;
-	$('#pk_overheadtotal').val(Math.round(res));
-	hitSubTotalOverHead();
+  var t1=parseFloat($('#pk_fobtotal').val().replace('.',''));
+  var oh=parseFloat($('#pk_overhead').val());
+  var res=(oh/100)*t1;
+  $('#pk_overheadtotal').val(Math.round(res));
+  hitSubTotalOverHead();
 }
 
 function hitSubTotalOverHead(){
-	var t1=parseFloat($('#pk_fobtotal').val().replace('.',''));
-	var t2=parseFloat($('#pk_overheadtotal').val().replace('.',''));
-	var res=t1+t2;
-	$('#pk_subtotaloverhead').val(Math.round(res));
-	hitMargin();
+  var t1=parseFloat($('#pk_fobtotal').val().replace('.',''));
+  var t2=parseFloat($('#pk_overheadtotal').val().replace('.',''));
+  var res=t1+t2;
+  $('#pk_subtotaloverhead').val(Math.round(res));
+  hitMargin();
 }
 
 function hitMargin(){
@@ -4424,27 +4424,27 @@ function hitSubTotalMargin(){
 }
 
 function hitTax(){
-	var so=parseFloat($('#pk_subtotalmargin').val().replace('.',''));
-	var tax=parseFloat($('#pk_taxprice').val().replace('.',''));
-	var res=(tax/100)*so;
-	$('#pk_taxtotal').val(Math.round(res));
-	hitTotal();
+  var so=parseFloat($('#pk_subtotalmargin').val().replace('.',''));
+  var tax=parseFloat($('#pk_taxprice').val().replace('.',''));
+  var res=(tax/100)*so;
+  $('#pk_taxtotal').val(Math.round(res));
+  hitTotal();
 }
 
 function hitTotal(){
-	var t1=parseFloat($('#pk_subtotalmargin').val().replace('.',''));
-	var t2=parseFloat($('#pk_taxtotal').val().replace('.',''));
-	var res=t1+t2;
-	$('#pk_total').val(Math.round(res));
-	hitDevided();
+  var t1=parseFloat($('#pk_subtotalmargin').val().replace('.',''));
+  var t2=parseFloat($('#pk_taxtotal').val().replace('.',''));
+  var res=t1+t2;
+  $('#pk_total').val(Math.round(res));
+  hitDevided();
 }
 
 function hitDevided(){
-	var total=parseFloat($('#pk_total').val().replace('.',''));
-	var devided=parseFloat($('#pk_devided').val().replace('.',''));
-	var res=total/devided;
-	$('#pk_usdprice').val(res.toFixed(4));
-	$('#pk_quote').val(res.toFixed(4));
+  var total=parseFloat($('#pk_total').val().replace('.',''));
+  var devided=parseFloat($('#pk_devided').val().replace('.',''));
+  var res=total/devided;
+  $('#pk_usdprice').val(res.toFixed(4));
+  $('#pk_quote').val(res.toFixed(4));
 }
 
 /* HITUNG HARGA */
@@ -4873,32 +4873,32 @@ $('#cb_ukcrt').click(function(){
 });
 
 /*$('#cb_crt').click(function(){
-	if($(this).prop('checked')){
-		var cbm=parseFloat($('#pk_crtcbm').val());
-		$('#pk_crtcbm1').prop('readonly',false);
-		$('#pk_crtcbm1').val(cbm);
-		hitHargaCrt();
-		$('#cb_ctnbox').prop('checked',false);
-		$('#pk_ctnboxcbm1').val(0);
-		$('#pk_ctnboxcbm1').prop('readonly',true);
-		hitHargaCtnbox();
-		$('#cb_ctnbox').prop('disabled',true);
-		$('#cb_ispn').prop('checked',true);
-		$('#cb_ispn').prop('disabled',false);
-		$('#pk_ispn').prop('readonly',false);
-		$('#pk_ispn').val(1);
-		hitIspn();
-	}else{
-		$('#pk_crtcbm1').prop('readonly',true);
-		$('#pk_crtcbm1').val(0);
-		hitHargaCrt();
-		$('#cb_ctnbox').prop('disabled',false);
-		$('#cb_ispn').prop('checked',false);
-		$('#cb_ispn').prop('disabled',true);
-		$('#pk_ispn').prop('readonly',true);
-		$('#pk_ispn').val(0);
-		hitIspn();
-	}
+  if($(this).prop('checked')){
+    var cbm=parseFloat($('#pk_crtcbm').val());
+    $('#pk_crtcbm1').prop('readonly',false);
+    $('#pk_crtcbm1').val(cbm);
+    hitHargaCrt();
+    $('#cb_ctnbox').prop('checked',false);
+    $('#pk_ctnboxcbm1').val(0);
+    $('#pk_ctnboxcbm1').prop('readonly',true);
+    hitHargaCtnbox();
+    $('#cb_ctnbox').prop('disabled',true);
+    $('#cb_ispn').prop('checked',true);
+    $('#cb_ispn').prop('disabled',false);
+    $('#pk_ispn').prop('readonly',false);
+    $('#pk_ispn').val(1);
+    hitIspn();
+  }else{
+    $('#pk_crtcbm1').prop('readonly',true);
+    $('#pk_crtcbm1').val(0);
+    hitHargaCrt();
+    $('#cb_ctnbox').prop('disabled',false);
+    $('#cb_ispn').prop('checked',false);
+    $('#cb_ispn').prop('disabled',true);
+    $('#pk_ispn').prop('readonly',true);
+    $('#pk_ispn').val(0);
+    hitIspn();
+  }
 });*/
 
 $('#cb_sponati').click(function(){
@@ -5236,7 +5236,7 @@ $('#pk_manpowerprice').focusout(function(){
 /* SAVE */
 
 function presave(){
-	$.confirm({
+  $.confirm({
         title: 'Konfirmasi!',
         content: 'Apakah Anda yakin ingin menyimpan ini ?',
         icon: 'fa fa-exclamation',
@@ -5258,65 +5258,65 @@ function presave(){
 }
 
 function saveData(){
-	var foto=$('#item_foto')[0].files[0];
+  var foto=$('#item_foto')[0].files[0];
   var fotoold=$('#item_fotoold').val();
-	var error='';
-	//var errorManPower='';
-	var fdata=new FormData();
-	/*for(var i=0;i<foto.length;i++){
-		var name = foto[i].name;
+  var error='';
+  //var errorManPower='';
+  var fdata=new FormData();
+  /*for(var i=0;i<foto.length;i++){
+    var name = foto[i].name;
         var extension = name.split('.').pop().toLowerCase();
-		if(jQuery.inArray(extension,['gif','png','jpg','jpeg','bmp'])==-1){
-			error+='Invalid '+i+' Image file';
-		}else{
-			fdata.append('photo',foto[i]);
-		}
-	}*/
+    if(jQuery.inArray(extension,['gif','png','jpg','jpeg','bmp'])==-1){
+      error+='Invalid '+i+' Image file';
+    }else{
+      fdata.append('photo',foto[i]);
+    }
+  }*/
 
-	fdata.append('photo',foto);
+  fdata.append('photo',foto);
 
-	if($('#item_kode').val()==''){
-		error+='Code can not be empty \n';
-	}else{
-		fdata.append('code',$('#item_kode').val());	
-	}
-	
-	if($('#item_nama').val()==''){
-		error+='Name can not be empty \n';
-	}else{
-		fdata.append('name',$('#item_nama').val());	
-	}
-	
+  if($('#item_kode').val()==''){
+    error+='Code can not be empty \n';
+  }else{
+    fdata.append('code',$('#item_kode').val()); 
+  }
+  
+  if($('#item_nama').val()==''){
+    error+='Name can not be empty \n';
+  }else{
+    fdata.append('name',$('#item_nama').val()); 
+  }
+  
   fdata.append('photo_old',fotoold);
-	fdata.append('dimensionlw',$('#item_diml_p').val());
-	fdata.append('dimensionll',$('#item_diml_l').val());
-	fdata.append('dimensionld',$('#item_diml_t').val());
-	fdata.append('dimensionlcbm',$('#item_diml_cbm').val());
-	fdata.append('dimensionmw',$('#item_dimm_p').val());
-	fdata.append('dimensionml',$('#item_dimm_l').val());
-	fdata.append('dimensionmd',$('#item_dimm_t').val());
-	fdata.append('dimensionmcbm',$('#item_dimm_cbm').val());
-	fdata.append('dimensionsw',$('#item_dims_p').val());
-	fdata.append('dimensionsl',$('#item_dims_l').val());
-	fdata.append('dimensionsd',$('#item_dims_t').val());
-	fdata.append('dimensionscbm',$('#item_dims_cbm').val());
-	fdata.append('dimensiontotcbm',$('#item_dim_totcbm').val());
-	fdata.append('weight',$('#item_berat').val());
-	fdata.append('spprice',$('#h_spprice').unmask().val());
-	fdata.append('fin',$('#h_fin').unmask().val());
-	fdata.append('glass',$('#h_glass').unmask().val());
-	fdata.append('mirror',$('#h_mirror').unmask().val());
-	fdata.append('metal',$('#h_metal').unmask().val());
-	fdata.append('brass',$('#h_brass').unmask().val());
-	fdata.append('aluminium',$('#h_aluminium').unmask().val());
-	fdata.append('candle',$('#h_candle').unmask().val());
-	fdata.append('stone',$('#h_stone').unmask().val());
-	fdata.append('base',$('#h_base').unmask().val());
-	fdata.append('backing',$('#h_backing').unmask().val());
-	fdata.append('strbiayalain1',$('#h_jdllain1').val());
-	fdata.append('numbiayalain1',$('#h_lain1').unmask().val());
-	fdata.append('strbiayalain2',$('#h_jdllain2').val());
-	fdata.append('numbiayalain2',$('#h_lain2').unmask().val());
+  fdata.append('dimensionlw',$('#item_diml_p').val());
+  fdata.append('dimensionll',$('#item_diml_l').val());
+  fdata.append('dimensionld',$('#item_diml_t').val());
+  fdata.append('dimensionlcbm',$('#item_diml_cbm').val());
+  fdata.append('dimensionmw',$('#item_dimm_p').val());
+  fdata.append('dimensionml',$('#item_dimm_l').val());
+  fdata.append('dimensionmd',$('#item_dimm_t').val());
+  fdata.append('dimensionmcbm',$('#item_dimm_cbm').val());
+  fdata.append('dimensionsw',$('#item_dims_p').val());
+  fdata.append('dimensionsl',$('#item_dims_l').val());
+  fdata.append('dimensionsd',$('#item_dims_t').val());
+  fdata.append('dimensionscbm',$('#item_dims_cbm').val());
+  fdata.append('dimensiontotcbm',$('#item_dim_totcbm').val());
+  fdata.append('weight',$('#item_berat').val());
+  fdata.append('spprice',$('#h_spprice').unmask().val());
+  fdata.append('fin',$('#h_fin').unmask().val());
+  fdata.append('glass',$('#h_glass').unmask().val());
+  fdata.append('mirror',$('#h_mirror').unmask().val());
+  fdata.append('metal',$('#h_metal').unmask().val());
+  fdata.append('brass',$('#h_brass').unmask().val());
+  fdata.append('aluminium',$('#h_aluminium').unmask().val());
+  fdata.append('candle',$('#h_candle').unmask().val());
+  fdata.append('stone',$('#h_stone').unmask().val());
+  fdata.append('base',$('#h_base').unmask().val());
+  fdata.append('backing',$('#h_backing').unmask().val());
+  fdata.append('strbiayalain1',$('#h_jdllain1').val());
+  fdata.append('numbiayalain1',$('#h_lain1').unmask().val());
+  fdata.append('strbiayalain2',$('#h_jdllain2').val());
+  fdata.append('numbiayalain2',$('#h_lain2').unmask().val());
   fdata.append('strbiayalain3',$('#h_jdllain3').val());
   fdata.append('numbiayalain3',$('#h_lain3').unmask().val());
   fdata.append('strbiayalain4',$('#h_jdllain4').val());
@@ -5324,88 +5324,88 @@ function saveData(){
   fdata.append('strbiayalain5',$('#h_jdllain5').val());
   fdata.append('numbiayalain5',$('#h_lain5').unmask().val());
 
-	if($('#h_subtotal1').val()=='' | $('#h_subtotal1').val()==0 && $('#h_subtotal1').val()==0.00 | $('#h_subtotal1').val()<0){
-		error+='Sub Total 1 can not be 0 \n';
-	}
-	else{
-		fdata.append('subtotal1',$('#h_subtotal1').val());
-	}
-	
-	fdata.append('boxsizew',$('#pk_ctnboxp').val());
-	fdata.append('boxsizel',$('#pk_ctnboxl').val());
-	fdata.append('boxsized',$('#pk_ctnboxt').val());
-	fdata.append('boxsizecbm',$('#pk_ctnboxcbm').val());
-	fdata.append('boxprice1',$('#pk_ctnboxcbm1').val());
-	fdata.append('boxprice2',$('#pk_ctnboxprice').unmask().val());
-	fdata.append('boxpriceres',$('#pk_ctnboxtotal').val());
-	fdata.append('innerboxpriceres',$('#pk_innerboxprice').unmask().val());
-	fdata.append('cratesizew',$('#pk_crtp').val());
-	fdata.append('cratesizel',$('#pk_crtl').val());
-	fdata.append('cratesized',$('#pk_crtt').val());
-	fdata.append('cratesizecbm',$('#pk_crtcbm').val());
-	fdata.append('crateprice1',$('#pk_crtcbm1').val());
-	fdata.append('crateprice2',$('#pk_crtprice').unmask().val());
-	fdata.append('cratepriceres',$('#pk_crttotal').val());
-	fdata.append('mfoamsizew',$('#pk_mfp').val());
-	fdata.append('mfoamsizel',$('#pk_mfl').val());
-	fdata.append('mfoamsized',$('#pk_mft').val());
-	fdata.append('mfoamsizecbm',$('#pk_mfcbm').val());
-	fdata.append('mfoamprice2',$('#pk_mfprice').unmask().val());
-	fdata.append('mfoampriceres',$('#pk_mftotal').val());
+  if($('#h_subtotal1').val()=='' | $('#h_subtotal1').val()==0 && $('#h_subtotal1').val()==0.00 | $('#h_subtotal1').val()<0){
+    error+='Sub Total 1 can not be 0 \n';
+  }
+  else{
+    fdata.append('subtotal1',$('#h_subtotal1').val());
+  }
+  
+  fdata.append('boxsizew',$('#pk_ctnboxp').val());
+  fdata.append('boxsizel',$('#pk_ctnboxl').val());
+  fdata.append('boxsized',$('#pk_ctnboxt').val());
+  fdata.append('boxsizecbm',$('#pk_ctnboxcbm').val());
+  fdata.append('boxprice1',$('#pk_ctnboxcbm1').val());
+  fdata.append('boxprice2',$('#pk_ctnboxprice').unmask().val());
+  fdata.append('boxpriceres',$('#pk_ctnboxtotal').val());
+  fdata.append('innerboxpriceres',$('#pk_innerboxprice').unmask().val());
+  fdata.append('cratesizew',$('#pk_crtp').val());
+  fdata.append('cratesizel',$('#pk_crtl').val());
+  fdata.append('cratesized',$('#pk_crtt').val());
+  fdata.append('cratesizecbm',$('#pk_crtcbm').val());
+  fdata.append('crateprice1',$('#pk_crtcbm1').val());
+  fdata.append('crateprice2',$('#pk_crtprice').unmask().val());
+  fdata.append('cratepriceres',$('#pk_crttotal').val());
+  fdata.append('mfoamsizew',$('#pk_mfp').val());
+  fdata.append('mfoamsizel',$('#pk_mfl').val());
+  fdata.append('mfoamsized',$('#pk_mft').val());
+  fdata.append('mfoamsizecbm',$('#pk_mfcbm').val());
+  fdata.append('mfoamprice2',$('#pk_mfprice').unmask().val());
+  fdata.append('mfoampriceres',$('#pk_mftotal').val());
   fdata.append('brownpaper',$('#pk_brownpaperbh').val());
   fdata.append('brownpaperprice',$('#pk_brownpaperprice').unmask().val());
   fdata.append('brownpapertotal',$('#pk_brownpapertotal').val());
-	fdata.append('foamsheet1',$('#pk_fsbh').val());
-	fdata.append('foamsheet2',$('#pk_fsprice').unmask().val());
-	fdata.append('foamsheetres',$('#pk_fstotal').val());
+  fdata.append('foamsheet1',$('#pk_fsbh').val());
+  fdata.append('foamsheet2',$('#pk_fsprice').unmask().val());
+  fdata.append('foamsheetres',$('#pk_fstotal').val());
   fdata.append('bubblesheet1',$('#pk_bsbh').val());
   fdata.append('bubblesheet2',$('#pk_bsprice').unmask().val());
   fdata.append('bubblesheetres',$('#pk_bstotal').val());
-	fdata.append('shreddedpaper1',$('#pk_shreddedpaper').val());
-	fdata.append('shreddedpaper2',$('#pk_shreddedpaperprice').unmask().val());
-	fdata.append('shreddedpaperres',$('#pk_shreddedpapertotal').val());
-	fdata.append('singleface1',$('#pk_singleface').val());
-	fdata.append('singleface2',$('#pk_singlefaceprice').unmask().val());
-	fdata.append('singlefaceres',$('#pk_singlefacetotal').val());
-	fdata.append('styrofoam1',$('#pk_styrofoam').val());
-	fdata.append('styrofoam2',$('#pk_styrofoamprice').unmask().val());
-	fdata.append('styrofoamres',$('#pk_styrofoamtotal').val());
-	fdata.append('corner1',$('#pk_corner').val());
-	fdata.append('corner2',$('#pk_cornerprice').unmask().val());
-	fdata.append('cornerres',$('#pk_cornertotal').val());
-	fdata.append('plastic1',$('#pk_plastik').val());
-	fdata.append('plastic2',$('#pk_plastikprice').unmask().val());
-	fdata.append('plasticres',$('#pk_plastiktotal').val());
+  fdata.append('shreddedpaper1',$('#pk_shreddedpaper').val());
+  fdata.append('shreddedpaper2',$('#pk_shreddedpaperprice').unmask().val());
+  fdata.append('shreddedpaperres',$('#pk_shreddedpapertotal').val());
+  fdata.append('singleface1',$('#pk_singleface').val());
+  fdata.append('singleface2',$('#pk_singlefaceprice').unmask().val());
+  fdata.append('singlefaceres',$('#pk_singlefacetotal').val());
+  fdata.append('styrofoam1',$('#pk_styrofoam').val());
+  fdata.append('styrofoam2',$('#pk_styrofoamprice').unmask().val());
+  fdata.append('styrofoamres',$('#pk_styrofoamtotal').val());
+  fdata.append('corner1',$('#pk_corner').val());
+  fdata.append('corner2',$('#pk_cornerprice').unmask().val());
+  fdata.append('cornerres',$('#pk_cornertotal').val());
+  fdata.append('plastic1',$('#pk_plastik').val());
+  fdata.append('plastic2',$('#pk_plastikprice').unmask().val());
+  fdata.append('plasticres',$('#pk_plastiktotal').val());
 
-	if($('#pk_manpowerprice').val()=='' | $('#pk_manpowerprice').val()==0 | $('#pk_manpowerprice').val()==0.00 | $('#pk_manpowerprice').val()<0){
-		error+='Man power can not be 0 \n';
-	}else{
-		fdata.append('manpower',$('#pk_manpowerprice').unmask().val());
-	}
+  if($('#pk_manpowerprice').val()=='' | $('#pk_manpowerprice').val()==0 | $('#pk_manpowerprice').val()==0.00 | $('#pk_manpowerprice').val()<0){
+    error+='Man power can not be 0 \n';
+  }else{
+    fdata.append('manpower',$('#pk_manpowerprice').unmask().val());
+  }
 
-	fdata.append('truckingcost1',$('#pk_truckingcostprice').unmask().val());
-	fdata.append('truckingcost2',$('#pk_truckingcostkap').val());
-	fdata.append('truckingcost3',$('#pk_truckingcostcbm').val());
+  fdata.append('truckingcost1',$('#pk_truckingcostprice').unmask().val());
+  fdata.append('truckingcost2',$('#pk_truckingcostkap').val());
+  fdata.append('truckingcost3',$('#pk_truckingcostcbm').val());
 
-	if($('#pk_truckingtotal').val()=='' | $('#pk_truckingtotal').val()==0 | $('#pk_truckingtotal').val()==0.00 | $('#pk_truckingtotal').val()<0){
-		error+='Trucking cost can not be 0 \n';
-	}else{
-		fdata.append('truckingcostres',$('#pk_truckingtotal').val());
-	}
+  if($('#pk_truckingtotal').val()=='' | $('#pk_truckingtotal').val()==0 | $('#pk_truckingtotal').val()==0.00 | $('#pk_truckingtotal').val()<0){
+    error+='Trucking cost can not be 0 \n';
+  }else{
+    fdata.append('truckingcostres',$('#pk_truckingtotal').val());
+  }
 
-	fdata.append('conteinercost1',$('#pk_containercostprice').unmask().val());
-	fdata.append('conteinercost2',$('#pk_containercostkap').val());
-	fdata.append('conteinercost3',$('#pk_containercostcbm').val());
-	
-	if($('#pk_containercosttotal').val()=='' | $('#pk_containercosttotal').val()==0 | $('#pk_containercosttotal').val()==0.00 | $('#pk_containercosttotal').val()<0){
-		error+='Container cost can not be 0 \n';
-	}else{
-		fdata.append('conteinercostres',$('#pk_containercosttotal').val());
-	}
-	
-	fdata.append('ispn1',$('#pk_ispn').val());
-	fdata.append('ispn2',$('#pk_ispnprice').unmask().val());
-	fdata.append('ispnres',$('#pk_ispntotal').val());
+  fdata.append('conteinercost1',$('#pk_containercostprice').unmask().val());
+  fdata.append('conteinercost2',$('#pk_containercostkap').val());
+  fdata.append('conteinercost3',$('#pk_containercostcbm').val());
+  
+  if($('#pk_containercosttotal').val()=='' | $('#pk_containercosttotal').val()==0 | $('#pk_containercosttotal').val()==0.00 | $('#pk_containercosttotal').val()<0){
+    error+='Container cost can not be 0 \n';
+  }else{
+    fdata.append('conteinercostres',$('#pk_containercosttotal').val());
+  }
+  
+  fdata.append('ispn1',$('#pk_ispn').val());
+  fdata.append('ispn2',$('#pk_ispnprice').unmask().val());
+  fdata.append('ispnres',$('#pk_ispntotal').val());
   fdata.append('sponati1',$('#pk_sponati').val());
   fdata.append('sponati2',$('#pk_sponatiprice').unmask().val());
   fdata.append('sponatires',$('#pk_sponatitotal').val());
@@ -5427,37 +5427,37 @@ function saveData(){
   fdata.append('babat15',$('#pk_babat5').val());
   fdata.append('babat25',$('#pk_babatprice5').unmask().val());
   fdata.append('babatres5',$('#pk_babattotal5').val());
-	fdata.append('jhook1',$('#pk_jhook').val());
-	fdata.append('jhook2',$('#pk_jhookprice').unmask().val());
-	fdata.append('jhookres',$('#pk_jhooktotal').val());
-	fdata.append('dring1',$('#pk_dring').val());
-	fdata.append('dring2',$('#pk_dringprice').unmask().val());
-	fdata.append('dringres',$('#pk_dringtotal').val());
-	fdata.append('ringhanger1',$('#pk_ringhanger').val());
-	fdata.append('ringhanger2',$('#pk_ringhangerprice').unmask().val());
-	fdata.append('ringhangerres',$('#pk_ringhangertotal').val());
-	fdata.append('keyhole1',$('#pk_keyhole').val());
-	fdata.append('keyhole2',$('#pk_keyholeprice').unmask().val());
-	fdata.append('keyholeres',$('#pk_keyholetotal').val());
-	fdata.append('subtotal2',$('#pk_subtotal2').val());
-	fdata.append('fobprice1',$('#pk_fob1').val());
-	fdata.append('fobprice2',$('#pk_fob2').val());
-	
-	if($('#pk_fobtotal').val()=='' | $('#pk_fobtotal').val()==0 && $('#pk_fobtotal').val()==0.00 | $('#pk_fobtotal').val()<0){
-		error+='FOB Price can not be 0 \n';
-	}else{
-		fdata.append('fobpriceres',$('#pk_fobtotal').val());
-	}
-	
-	fdata.append('overhead1',$('#pk_overhead').val());
-	fdata.append('overheadres',$('#pk_overheadtotal').val());
-	fdata.append('subtotaloverhead',$('#pk_subtotaloverhead').val());
-	fdata.append('tax1',$('#pk_taxprice').val());
-	fdata.append('tax2',$('#pk_taxtotal').val());
-	fdata.append('total',$('#pk_total').val());
-	fdata.append('devided',$('#pk_devided').unmask().val());
-	fdata.append('usdprice',$('#pk_usdprice').val());
-	fdata.append('quote',$('#pk_quote').val());
+  fdata.append('jhook1',$('#pk_jhook').val());
+  fdata.append('jhook2',$('#pk_jhookprice').unmask().val());
+  fdata.append('jhookres',$('#pk_jhooktotal').val());
+  fdata.append('dring1',$('#pk_dring').val());
+  fdata.append('dring2',$('#pk_dringprice').unmask().val());
+  fdata.append('dringres',$('#pk_dringtotal').val());
+  fdata.append('ringhanger1',$('#pk_ringhanger').val());
+  fdata.append('ringhanger2',$('#pk_ringhangerprice').unmask().val());
+  fdata.append('ringhangerres',$('#pk_ringhangertotal').val());
+  fdata.append('keyhole1',$('#pk_keyhole').val());
+  fdata.append('keyhole2',$('#pk_keyholeprice').unmask().val());
+  fdata.append('keyholeres',$('#pk_keyholetotal').val());
+  fdata.append('subtotal2',$('#pk_subtotal2').val());
+  fdata.append('fobprice1',$('#pk_fob1').val());
+  fdata.append('fobprice2',$('#pk_fob2').val());
+  
+  if($('#pk_fobtotal').val()=='' | $('#pk_fobtotal').val()==0 && $('#pk_fobtotal').val()==0.00 | $('#pk_fobtotal').val()<0){
+    error+='FOB Price can not be 0 \n';
+  }else{
+    fdata.append('fobpriceres',$('#pk_fobtotal').val());
+  }
+  
+  fdata.append('overhead1',$('#pk_overhead').val());
+  fdata.append('overheadres',$('#pk_overheadtotal').val());
+  fdata.append('subtotaloverhead',$('#pk_subtotaloverhead').val());
+  fdata.append('tax1',$('#pk_taxprice').val());
+  fdata.append('tax2',$('#pk_taxtotal').val());
+  fdata.append('total',$('#pk_total').val());
+  fdata.append('devided',$('#pk_devided').unmask().val());
+  fdata.append('usdprice',$('#pk_usdprice').val());
+  fdata.append('quote',$('#pk_quote').val());
   fdata.append('catatan',$('#catatan').val());
   fdata.append('hrg_jasaoven',$('#hrg_jasaoven').val());
   fdata.append('jasaoven',$('#h_jasaoven').val());
@@ -5525,41 +5525,41 @@ function saveData(){
   fdata.append('margintotal',$('#pk_margintotal').val());
   fdata.append('subtotalmargin',$('#pk_subtotalmargin').val());
 
-	if(error==''){
-		$.ajax({
-			url:'<?= site_url('submitQuotation');?>',
-			data: fdata,
-			method:'POST',
-			dataType:'JSON',
-			processData:false,
-			contentType:false,
-			//enctype:'multipart/form-data',
-			beforeSend:function(){
-				$('#btnsave_icon').html('<i class="fa fa-spinner fa-spin"></i>');
-			},success:function(result){
+  if(error==''){
+    $.ajax({
+      url:'<?= site_url('submitQuotation');?>',
+      data: fdata,
+      method:'POST',
+      dataType:'JSON',
+      processData:false,
+      contentType:false,
+      //enctype:'multipart/form-data',
+      beforeSend:function(){
+        $('#btnsave_icon').html('<i class="fa fa-spinner fa-spin"></i>');
+      },success:function(result){
         console.log(result);
-				if(result.code==0){
-					$('#btnsave_icon').html('<i class="fa fa-check-circle"></i>');
-					setTimeout(function(){confirmNext(result.message,result.id);},3000);
-				}else{
-					$('#btnsave_icon').html('<i class="fa fa-times-circle"></i>');
-          				$.alert(result.message);
-				}
+        if(result.code==0){
+          $('#btnsave_icon').html('<i class="fa fa-check-circle"></i>');
+          setTimeout(function(){confirmNext(result.message,result.id);},3000);
+        }else{
+          $('#btnsave_icon').html('<i class="fa fa-times-circle"></i>');
+                  $.alert(result.message);
+        }
         
-				setTimeout(function(){$('#btnsave_icon').html('<i class="fa fa-save"></i>');},3000);
+        setTimeout(function(){$('#btnsave_icon').html('<i class="fa fa-save"></i>');},3000);
         $('.qprice').mask('000.000.000.000',{reverse:true,optional:true});
-			},error:function(xhr){
-				$('#btnsave_icon').html('<i class="fa fa-times-circle"></i>');
-				$.alert(xhr.responseText);
-			}
-		});
-	}else{
-		$.alert(error+'\n');
-	}
+      },error:function(xhr){
+        $('#btnsave_icon').html('<i class="fa fa-times-circle"></i>');
+        $.alert(xhr.responseText);
+      }
+    });
+  }else{
+    $.alert(error+'\n');
+  }
 }
 
 function confirmNext(text,id){
-	$.confirm({
+  $.confirm({
         title: 'Konfirmasi!',
         content: text+', mau lanjut kemana ?',
         icon: 'fa fa-exclamation',
@@ -5575,11 +5575,11 @@ function confirmNext(text,id){
                 }
             },
             Kembali:{
-            	text:'Kembali',
-            	btnClass:'btn-orange',
-            	action: function(){
-            		location.href="<?= site_url('main');?>";
-            	}
+              text:'Kembali',
+              btnClass:'btn-orange',
+              action: function(){
+                location.href="<?= site_url('main');?>";
+              }
             },
             Lanjut: function(){
                 location.reload(1);
